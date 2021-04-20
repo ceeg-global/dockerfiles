@@ -1,0 +1,12 @@
+#!/bin/sh
+# cd /tmp && nano ubuntu-env.sh
+# chmod 777 ubuntu-env.sh && ./ubuntu-env.sh
+
+# --------------Update--------------
+apt-get update -y && apt-get upgrade -y && apt update -y && apt upgrade -y
+
+# --------------Docker--------------
+apt -y install software-properties-common
+cd /tmp && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt-get update && apt-get -y install docker-ce
